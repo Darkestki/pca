@@ -1,11 +1,17 @@
 """
 Created on Wed Mar  5 16:44:39 2025
 """
-
-import numpy as np
 import pandas as pd
-df = pd.read_csv(r"C:\Users\Jitu Patel\OneDrive\Desktop\New folder (4)\breast-cancer-wisconsin-data.csv""C:\Users\Jitu Patel\OneDrive\Desktop\New folder (4)\breast-cancer-wisconsin-data.csv")
-df
+from sklearn.preprocessing import LabelEncoder
+
+# Use correct path format
+df = pd.read_csv("C:\Users\Jitu Patel\OneDrive\Desktop\New folder (4)\breast-cancer-wisconsin-data.csv""C:\Users\Jitu Patel\OneDrive\Desktop\New folder (4)\breast-cancer-wisconsin-data.csv")
+
+# Encode diagnosis column
+LE = LabelEncoder()
+df["diagnosis"] = LE.fit_transform(df["diagnosis"])
+
+print(df.head())
 
 df.info()
 #------------------------------------------------------
@@ -73,6 +79,7 @@ for i in range(1,101):
 print("Cross validation: Training accuracy:",np.round(np.mean(training_acc),2))
 print("Cross validation: Test accuracy:",np.round(np.mean(test_acc),2))
 #==============================================================
+
 
 
 
