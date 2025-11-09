@@ -7,7 +7,8 @@ import pandas as pd
 import joblib
 
 filename = 'dimension_reduction_models.pkl'
-loaded_model = joblib.load(open(filename, 'rb'))
+loaded_model = joblib.load(open(filename, 'rb'))
+
 # dATA TRANSFORMTION
 from sklearn.preprocessing import LabelEncoder
 LE = LabelEncoder() 
@@ -67,6 +68,7 @@ for i in range(1,101):
 print("Cross validation: Training accuracy:",np.round(np.mean(training_acc),2))
 print("Cross validation: Test accuracy:",np.round(np.mean(test_acc),2))
 #==============================================================
+
 
 
 
