@@ -5,6 +5,17 @@ Created on Wed Mar  5 16:44:39 2025
 import numpy as np
 import pandas as pd
 import joblib
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+
+# Example: load your data
+df = pd.read_csv(""C:\Users\Jitu Patel\OneDrive\Desktop\New folder (4)\breast-cancer-wisconsin-data.csv"")
+
+# Encode the 'diagnosis' column
+LE = LabelEncoder()
+df["diagnosis"] = LE.fit_transform(df["diagnosis"])
+
+print(df.head())
 
 filename = 'dimension_reduction_models.pkl'
 loaded_model = joblib.load(open(filename, 'rb'))
@@ -68,6 +79,7 @@ for i in range(1,101):
 print("Cross validation: Training accuracy:",np.round(np.mean(training_acc),2))
 print("Cross validation: Test accuracy:",np.round(np.mean(test_acc),2))
 #==============================================================
+
 
 
 
