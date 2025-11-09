@@ -9,7 +9,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
 # Example: load your data
-df = pd.read_csv(""C:\Users\Jitu Patel\OneDrive\Desktop\New folder (4)\breast-cancer-wisconsin-data.csv"")
+df = pd.read_csv(r"C:\Users\Jitu Patel\OneDrive\Desktop\New folder (4)\breast-cancer-wisconsin-data.csv"")
 
 # Encode the 'diagnosis' column
 LE = LabelEncoder()
@@ -79,6 +79,7 @@ for i in range(1,101):
 print("Cross validation: Training accuracy:",np.round(np.mean(training_acc),2))
 print("Cross validation: Test accuracy:",np.round(np.mean(test_acc),2))
 #==============================================================
+
 
 
 
